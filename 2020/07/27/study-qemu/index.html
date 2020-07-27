@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>study qemu | I never know you come to my life.</title><meta name="description" content="7月23日qemu搭建arm开发环境第一部分第一步Windows下QEMU安装文件:链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1mLw4pqdp9Q8JxYkrXRfbbg 提取码：3qq4 下载上述两个文件,并安装QEMU后,运行如下命令: 1&quot;C:\Program Files\qemu\qemu-system-arm.exe&quot; -M versatilepb -m"><meta name="keywords" content="study, qumu, Linux, Ubuntu"><meta name="author" content="caoxy114"><meta name="copyright" content="caoxy114"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://caoxy114.github.io/2020/07/27/study-qemu/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="study qemu"><meta property="og:url" content="http://caoxy114.github.io/2020/07/27/study-qemu/"><meta property="og:site_name" content="I never know you come to my life."><meta property="og:description" content="7月23日qemu搭建arm开发环境第一部分第一步Windows下QEMU安装文件:链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1mLw4pqdp9Q8JxYkrXRfbbg 提取码：3qq4 下载上述两个文件,并安装QEMU后,运行如下命令: 1&quot;C:\Program Files\qemu\qemu-system-arm.exe&quot; -M versatilepb -m"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2020-07-27T07:44:26.000Z"><meta property="article:modified_time" content="2020-07-27T07:49:29.595Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="next" title="test_my_life" href="http://caoxy114.github.io/2020/07/27/test-my-life/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-07-27 15:49:29'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/icon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">3</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About关于</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#7月23日qemu搭建arm开发环境"><span class="toc-number">1.</span> <span class="toc-text">7月23日qemu搭建arm开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一部分"><span class="toc-number">1.0.1.</span> <span class="toc-text">第一部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步"><span class="toc-number">1.0.2.</span> <span class="toc-text">第一步</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一堆企鹅"><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">一堆企鹅</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步"><span class="toc-number">1.0.3.</span> <span class="toc-text">第二步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三步"><span class="toc-number">1.0.4.</span> <span class="toc-text">第三步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二部分"><span class="toc-number">1.1.</span> <span class="toc-text">第二部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步-1"><span class="toc-number">1.1.1.</span> <span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步-这部分根据实际情况"><span class="toc-number">1.1.2.</span> <span class="toc-text">第二步&#x2F;这部分根据实际情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三步-1"><span class="toc-number">1.1.3.</span> <span class="toc-text">第三步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四步"><span class="toc-number">1.1.4.</span> <span class="toc-text">第四步</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#已成功实现"><span class="toc-number">1.1.4.0.0.1.</span> <span class="toc-text">已成功实现</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第五步：下载编译内核部分"><span class="toc-number">1.1.5.</span> <span class="toc-text">第五步：下载编译内核部分</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#versatile-defconfig和vexpress-defconfig都是比较常见的qemu支持的内核版本"><span class="toc-number">1.1.5.0.0.1.</span> <span class="toc-text">versatile_defconfig和vexpress_defconfig都是比较常见的qemu支持的内核版本</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#成功完成"><span class="toc-number">1.1.5.0.0.2.</span> <span class="toc-text">成功完成</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第六步用QEMU启动内核"><span class="toc-number">1.1.6.</span> <span class="toc-text">第六步用QEMU启动内核</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三部分（24日下午）"><span class="toc-number">1.2.</span> <span class="toc-text">第三部分（24日下午）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第七步busybox下载与编译"><span class="toc-number">1.2.1.</span> <span class="toc-text">第七步busybox下载与编译</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#成功"><span class="toc-number">1.2.1.0.0.1.</span> <span class="toc-text">成功</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第八步做一个文件系统"><span class="toc-number">1.2.2.</span> <span class="toc-text">第八步做一个文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#成功-1"><span class="toc-number">1.2.2.0.0.1.</span> <span class="toc-text">成功</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第九步QEMU启动内核加BusyBox"><span class="toc-number">1.2.3.</span> <span class="toc-text">第九步QEMU启动内核加BusyBox</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#成功-2"><span class="toc-number">1.2.3.0.0.1.</span> <span class="toc-text">成功</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">I never know you come to my life.</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">study qemu</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-07-27 15:44:26"><i class="far fa-calendar-alt fa-fw"></i> Created 2020-07-27</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-07-27 15:49:29"><i class="fas fa-history fa-fw"></i> Updated 2020-07-27</span></time></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="7月23日qemu搭建arm开发环境"><a href="#7月23日qemu搭建arm开发环境" class="headerlink" title="7月23日qemu搭建arm开发环境"></a>7月23日qemu搭建arm开发环境</h1><h3 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h3><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>Windows下QEMU安装文件:链接：<a href="https://pan.baidu.com/s/1mLw4pqdp9Q8JxYkrXRfbbg" target="_blank" rel="noopener">https://pan.baidu.com/s/1mLw4pqdp9Q8JxYkrXRfbbg</a> 提取码：3qq4</p>
+<p>下载上述两个文件,并安装QEMU后,运行如下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:\Program Files\qemu\qemu-system-arm.exe&quot; -M versatilepb -m 16 -kernel vmlinuz-qemu-arm-2.6.20 -append &quot;clocksource&#x3D;pit quiet rw&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="一堆企鹅"><a href="#一堆企鹅" class="headerlink" title="一堆企鹅"></a><u>一堆企鹅</u></h5><img src= "/img/loading.gif" data-src="C:\Users\曹新宇\Desktop\qemu.PNG" alt="qemu" style="zoom:50%;" />
+
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>ubuntu 18 文件系统下载地址如下:链接：<a href="https://pan.baidu.com/s/1qYmiqvL6nPx3LY8gDIylIw" target="_blank" rel="noopener">https://pan.baidu.com/s/1qYmiqvL6nPx3LY8gDIylIw</a> 提取码：68lc</p>
+<p>内核与DTB文件下载地址如下:链接：<a href="https://pan.baidu.com/s/1WmRMtAxddu69SbaUqRma8Q" target="_blank" rel="noopener">https://pan.baidu.com/s/1WmRMtAxddu69SbaUqRma8Q</a> 提取码：up22</p>
+<p>下载上述文件,解压缩文件系统,和内核文件以及DTB文件放在同一个目录,然后运行如下命令:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"C:\Program Files\qemu\qemu-system-arm.exe"</span> -M vexpress-a9 -m <span class="number">1024</span>M -kernel zImage -dtb vexpress-v2p-ca9.dtb -append <span class="string">"root=/dev/mmcblk0 rw console=ttyAMA0"</span> -sd rootfsubuntu18lxde.ext3 -serial stdio -smp <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<img src= "/img/loading.gif" data-src="C:\Users\曹新宇\Desktop\ubuntu1.PNG" alt="ubuntu1" style="zoom:40%;" />
+
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>…</p>
+<h2 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h2><h3 id="第一步-1"><a href="#第一步-1" class="headerlink" title="第一步"></a>第一步</h3><p>启动ubuntu</p>
+<p>用户cxy 密码123456</p>
+<h3 id="第二步-这部分根据实际情况"><a href="#第二步-这部分根据实际情况" class="headerlink" title="第二步/这部分根据实际情况"></a>第二步/这部分根据实际情况</h3><p>建立文件夹并解压缩gcc文件</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cxy@ubuntu:~/Desktop/src$ ls</span><br><span class="line">arm-linux-gcc<span class="number">-4.6</span><span class="number">.4</span>-arm-x86_64.tar.bz2</span><br><span class="line">cxy@ubuntu:~/Desktop/src$ <span class="built_in">mkdir</span> tmp</span><br><span class="line">cxy@ubuntu:~/Desktop/src$ cd tmp</span><br><span class="line">cxy@ubuntu:~/Desktop/src/tmp$ tar jxvf ../arm-linux-gcc<span class="number">-4.6</span><span class="number">.4</span>-arm-x86_64.tar.bz2</span><br></pre></td></tr></table></figure>
+
+<p>下载成功后,解压缩,然后将opt/TuxamitoSoftToolchains/arm-arm1176jzfssf-linux-gnueabi/gcc-4.6.4下的所有文件复制到新建的目录/usr/local/arm/gcc-4.6.4/下面.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir &#x2F;usr&#x2F;local&#x2F;arm&#x2F;gcc-4.6.4&#x2F;</span><br><span class="line"></span><br><span class="line">mkdir tmp</span><br><span class="line"></span><br><span class="line">cd tmp</span><br><span class="line"></span><br><span class="line">tar jxvf ..&#x2F;arm-linux-gcc-4.6.4-arm-x86_64.tar.bz2</span><br><span class="line"></span><br><span class="line">sudo cp -rf opt&#x2F;TuxamitoSoftToolchains&#x2F;arm-arm1176jzfssf-linux-gnueabi&#x2F;gcc-4.6.4&#x2F;* &#x2F;usr&#x2F;local&#x2F;arm&#x2F;gcc-4.6.4&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三步-1"><a href="#第三步-1" class="headerlink" title="第三步"></a>第三步</h3><p>配置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;arm&#x2F;gcc-4.6.4&#x2F;bin</span><br><span class="line">export LD_LIBRARY_PATH&#x3D;$LD_LIBRARY_PATH:&#x2F;usr&#x2F;local&#x2F;arm&#x2F;gcc-4.6.4&#x2F;lib</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arm-none-linux-gnueabi-gcc --version</span><br></pre></td></tr></table></figure>
+
+<p>若出现下面，则成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arm-none-linux-gnueabi-gcc (crosstool-NG hg+unknown-20130521.154019 - tc0002) 4.6.4</span><br><span class="line">Copyright (C) 2011 Free Software Foundation, Inc.</span><br><span class="line">This is free software; see the source for copying conditions. There is NO</span><br><span class="line">warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</span><br></pre></td></tr></table></figure>
+
+<h6 id="已成功实现"><a href="#已成功实现" class="headerlink" title="已成功实现"></a>已成功实现</h6><p><img src= "/img/loading.gif" data-src="C:%5CUsers%5C%E6%9B%B9%E6%96%B0%E5%AE%87%5CDesktop%5Cgcc1.PNG" alt="gcc1"></p>
+<h3 id="第五步：下载编译内核部分"><a href="#第五步：下载编译内核部分" class="headerlink" title="第五步：下载编译内核部分"></a>第五步：下载编译内核部分</h3><p>内核下载官网:<a href="https://www.kernel.org/,我选择了linux-4.4.229这个版本,你也可以选择其他版本,其他版本的编译过程也是类似的.如果官网下载比较慢的话,可以从下面这里下载" target="_blank" rel="noopener">https://www.kernel.org/,我选择了linux-4.4.229这个版本,你也可以选择其他版本,其他版本的编译过程也是类似的.如果官网下载比较慢的话,可以从下面这里下载</a>:</p>
+<blockquote>
+<p>链接：<a href="https://pan.baidu.com/s/1NFGSYQWZlgVuAy6yXu-xpQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1NFGSYQWZlgVuAy6yXu-xpQ</a><br>提取码：g00g</p>
+</blockquote>
+<p>使用命令<code>tar xvf linux-4.4.229.tar.xz</code>解压缩</p>
+<p>进入解压后目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ls arch&#x2F;arm&#x2F;configs&#x2F;</span><br><span class="line"></span><br><span class="line">acs5k_defconfig        cns3420vb_defconfig       ezx_defconfig         ixp4xx_defconfig      moxart_defconfig     nuc960_defconfig      raumfeld_defconfig      spear3xx_defconfig    viper_defconfig</span><br><span class="line">acs5k_tiny_defconfig   colibri_pxa270_defconfig  footbridge_defconfig  jornada720_defconfig  multi_v5_defconfig   omap1_defconfig       realview_defconfig      spear6xx_defconfig    vt8500_v6_v7_defconfig</span><br><span class="line">am200epdkit_defconfig  colibri_pxa300_defconfig  h3600_defconfig       keystone_defconfig    multi_v7_defconfig   omap2plus_defconfig   realview-smp_defconfig  spitz_defconfig       xcep_defconfig</span><br><span class="line">assabet_defconfig      collie_defconfig          h5000_defconfig       ks8695_defconfig      mv78xx0_defconfig    orion5x_defconfig     rpc_defconfig           stm32_defconfig       zeus_defconfig</span><br><span class="line">at91_dt_defconfig      corgi_defconfig           hackkit_defconfig     lart_defconfig        mvebu_v5_defconfig   palmz72_defconfig     s3c2410_defconfig       sunxi_defconfig       zx_defconfig</span><br><span class="line">axm55xx_defconfig      davinci_all_defconfig     hisi_defconfig        lpc18xx_defconfig     mvebu_v7_defconfig   pcm027_defconfig      s3c6400_defconfig       tct_hammer_defconfig</span><br><span class="line">badge4_defconfig       dove_defconfig            imote2_defconfig      lpc32xx_defconfig     mxs_defconfig        pleb_defconfig        s5pv210_defconfig       tegra_defconfig</span><br><span class="line">bcm2835_defconfig      ebsa110_defconfig         imx_v4_v5_defconfig   lpd270_defconfig      neponset_defconfig   prima2_defconfig      sama5_defconfig         trizeps4_defconfig</span><br><span class="line">bcm_defconfig          efm32_defconfig           imx_v6_v7_defconfig   lubbock_defconfig     netwinder_defconfig  pxa168_defconfig      shannon_defconfig       u300_defconfig</span><br><span class="line">cerfcube_defconfig     em_x270_defconfig         integrator_defconfig  magician_defconfig    netx_defconfig       pxa255-idp_defconfig  shmobile_defconfig      u8500_defconfig</span><br><span class="line">clps711x_defconfig     ep93xx_defconfig          iop13xx_defconfig     mainstone_defconfig   nhk8815_defconfig    pxa3xx_defconfig      simpad_defconfig        versatile_defconfig</span><br><span class="line">cm_x2xx_defconfig      eseries_pxa_defconfig     iop32x_defconfig      mini2440_defconfig    nuc910_defconfig     pxa910_defconfig      socfpga_defconfig       vexpress_defconfig</span><br><span class="line">cm_x300_defconfig      exynos_defconfig          iop33x_defconfig      mmp2_defconfig        nuc950_defconfig     qcom_defconfig        spear13xx_defconfig     vf610m4_defconfig</span><br></pre></td></tr></table></figure>
+
+<p>上面为支持的内核</p>
+<h6 id="versatile-defconfig和vexpress-defconfig都是比较常见的qemu支持的内核版本"><a href="#versatile-defconfig和vexpress-defconfig都是比较常见的qemu支持的内核版本" class="headerlink" title="versatile_defconfig和vexpress_defconfig都是比较常见的qemu支持的内核版本"></a>versatile_defconfig和vexpress_defconfig都是比较常见的qemu支持的内核版本</h6><p>在解压内核的根目录,执行如下命令来配置内核将要编译的平台:</p>
+<blockquote>
+<p>make vexpress_defconfig</p>
+</blockquote>
+<p>根据你安装的交叉编译器的版本,执行如下命令开始编译内核:</p>
+<blockquote>
+<p>ARM=arm CROSS_COMPILE=arm-linux-gnueabi- make -j16</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- make -j16</p>
+</blockquote>
+<p>上述命令中ARCH=arm是指定编译的CPU架构是arm,而CROSS_COMPILE=arm-none-linux-gnueabi是指定交叉编译工具,最后的-j16是使用16个线程进行编译,通常选择你当前电脑CPU数量的二倍.</p>
+<p>没有出现提示错误一般就编译成功了,常见编译后会出现类似如下的信息:</p>
+<blockquote>
+<p>AS arch/arm/boot/compressed/piggy.gzip.o<br>LD arch/arm/boot/compressed/vmlinux<br>OBJCOPY arch/arm/boot/zImage<br>Kernel: arch/arm/boot/zImage is ready</p>
+</blockquote>
+<p><img src= "/img/loading.gif" data-src="C:%5CUsers%5C%E6%9B%B9%E6%96%B0%E5%AE%87%5CDesktop%5Ckernel.PNG" alt="kernel"></p>
+<h6 id="成功完成"><a href="#成功完成" class="headerlink" title="成功完成"></a>成功完成</h6><h3 id="第六步用QEMU启动内核"><a href="#第六步用QEMU启动内核" class="headerlink" title="第六步用QEMU启动内核"></a>第六步用QEMU启动内核</h3><p>内核文件arch/arm/boot/zImage就是我们最后编译成功的内核文件.我们来尝试启动一下这个内核.命令中-M指定内核运行的平台,-m指定内存大小,-kernel指定内核文件,-dtb指定设备树定义文件.</p>
+<blockquote>
+<p>qemu-system-arm -M vexpress-a9 -m 512M -kernel arch/arm/boot/zImage -dtb arch/arm/boot/dts/vexpress-v2p-ca9.dtb</p>
+</blockquote>
+<img src= "/img/loading.gif" data-src="C:\Users\曹新宇\Desktop\一个企鹅.PNG" alt="一个企鹅" style="zoom:50%;" />
+
+<p>使用如下命令来指定内核日志输出的端口.其中-append指定内核启动的参数(后续在uboot启动的时候,也可以在uboot指定这个参数,我们在这里把内核输出console指定到了ttyAMA0这个串口),-serail设定串口转发到host机标准输入输出控制台(也就是你当前打命令的地方)</p>
+<blockquote>
+<p>qemu-system-arm -M vexpress-a9 -m 512M -kernel arch/arm/boot/zImage -dtb arch/arm/boot/dts/vexpress-v2p-ca9.dtb -append “root=/dev/mmcblk0 rw console=ttyAMA0” -serial stdio</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">VFS: Cannot open root device &quot;mmcblk0&quot; or unknown-block(0,0): error -6</span><br><span class="line">Please append a correct &quot;root&#x3D;&quot; boot option; here are the available partitions:</span><br><span class="line">1f00 131072 mtdblock0 (driver?)</span><br><span class="line">1f01 32768 mtdblock1 (driver?)</span><br><span class="line">Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)</span><br><span class="line">CPU: 0 PID: 1 Comm: swapper&#x2F;0 Not tainted 4.4.229+ #7</span><br><span class="line">Hardware name: ARM-Versatile Express</span><br><span class="line">[&lt;800155e8&gt;] (unwind_backtrace) from [&lt;80011ffc&gt;] (show_stack+0x10&#x2F;0x14)</span><br><span class="line">[&lt;80011ffc&gt;] (show_stack) from [&lt;80247198&gt;] (dump_stack+0x84&#x2F;0xa4)</span><br><span class="line">[&lt;80247198&gt;] (dump_stack) from [&lt;800a3428&gt;] (panic+0x8c&#x2F;0x1f4)</span><br><span class="line">[&lt;800a3428&gt;] (panic) from [&lt;8063b1cc&gt;] (mount_block_root+0x190&#x2F;0x250)</span><br><span class="line">[&lt;8063b1cc&gt;] (mount_block_root) from [&lt;8063b384&gt;] (mount_root+0xf8&#x2F;0x11c)</span><br><span class="line">[&lt;8063b384&gt;] (mount_root) from [&lt;8063b4d0&gt;] (prepare_namespace+0x128&#x2F;0x18c)</span><br><span class="line">[&lt;8063b4d0&gt;] (prepare_namespace) from [&lt;8063ae5c&gt;] (kernel_init_freeable+0x21c&#x2F;0x268)</span><br><span class="line">[&lt;8063ae5c&gt;] (kernel_init_freeable) from [&lt;804acf58&gt;] (kernel_init+0x8&#x2F;0xe4)</span><br><span class="line">[&lt;804acf58&gt;] (kernel_init) from [&lt;8000f350&gt;] (ret_from_fork+0x14&#x2F;0x24)</span><br><span class="line">---[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)</span><br></pre></td></tr></table></figure>
+
+<p><img src= "/img/loading.gif" data-src="C:\Users\曹新宇\Desktop\一个企鹅2背后.PNG" alt="一个企鹅2背后" style="zoom:50%;" /><img src= "/img/loading.gif" data-src="C:\Users\曹新宇\Desktop\一个企鹅2.PNG" alt="一个企鹅2" style="zoom:50%;" /></p>
+<h2 id="第三部分（24日下午）"><a href="#第三部分（24日下午）" class="headerlink" title="第三部分（24日下午）"></a>第三部分（24日下午）</h2><h3 id="第七步busybox下载与编译"><a href="#第七步busybox下载与编译" class="headerlink" title="第七步busybox下载与编译"></a>第七步busybox下载与编译</h3><p>官方下载地址:<a href="https://busybox.net/downloads/,我们选择下载了busybox-1.21.0.tar.bz2" target="_blank" rel="noopener">https://busybox.net/downloads/,我们选择下载了busybox-1.21.0.tar.bz2</a></p>
+<p>如果下载比较慢可以从这里下载:</p>
+<blockquote>
+<p>链接：<a href="https://pan.baidu.com/s/1rtNI5_lmIMx58McGIzaUWQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1rtNI5_lmIMx58McGIzaUWQ</a><br>提取码：lnf4</p>
+</blockquote>
+<p>下载后首先解压缩:</p>
+<blockquote>
+<p>tar xjf busybox-1.21.0.tar.bz2</p>
+</blockquote>
+<p>解压完成后,进入解压缩后的目录执行下面命令完成最初基本配置</p>
+<blockquote>
+<p>make defconfig ARCH=arm</p>
+</blockquote>
+<p><img src= "/img/loading.gif" data-src="C:%5CUsers%5C%E6%9B%B9%E6%96%B0%E5%AE%87%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200726212134208.png" alt="image-20200726212134208"></p>
+<p>运行成功后,当前目录会出现一个.config的文件.为了日后运行方便,我们需要手工改成静态编译</p>
+<p>你可以直接编辑.config将# CONFIG_STATIC is not set这句话改为CONFIG_STATIC=y</p>
+<p><img src= "/img/loading.gif" data-src="C:%5CUsers%5C%E6%9B%B9%E6%96%B0%E5%AE%87%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200726212240994.png" alt="image-20200726212240994"></p>
+<p>再执行如下命令进行编译:</p>
+<blockquote>
+<p>ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- make install</p>
+</blockquote>
+<h6 id="成功"><a href="#成功" class="headerlink" title="成功"></a>成功</h6><p><img src= "/img/loading.gif" data-src="C:%5CUsers%5C%E6%9B%B9%E6%96%B0%E5%AE%87%5CDesktop_install.PNG" alt="_install"></p>
+<h3 id="第八步做一个文件系统"><a href="#第八步做一个文件系统" class="headerlink" title="第八步做一个文件系统"></a>第八步做一个文件系统</h3><p>做一个最简单的文件系统image</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dd if&#x3D;&#x2F;dev&#x2F;zero of&#x3D;rootfs.ext3 bs&#x3D;1M count&#x3D;200</span><br><span class="line">mkfs.ext3 rootfs.ext3</span><br><span class="line">sudo mount -t ext3 rootfs.ext3 mnt</span><br><span class="line">cd mnt</span><br><span class="line">cp -rf busybox-1.21.0&#x2F;_install&#x2F;* .</span><br><span class="line">cd ..</span><br><span class="line">sudo umount mnt</span><br></pre></td></tr></table></figure>
+
+<p>这个rootfs.ext3就是最简单的文件系统image了.</p>
+<p><img src= "/img/loading.gif" data-src="C:%5CUsers%5C%E6%9B%B9%E6%96%B0%E5%AE%87%5CDesktop%5Crootfs.PNG" alt="rootfs"></p>
+<h6 id="成功-1"><a href="#成功-1" class="headerlink" title="成功"></a>成功</h6><p><img src= "/img/loading.gif" data-src="C:%5CUsers%5C%E6%9B%B9%E6%96%B0%E5%AE%87%5CDesktop%5Crootfs.PNG" alt="rootfs"></p>
+<h3 id="第九步QEMU启动内核加BusyBox"><a href="#第九步QEMU启动内核加BusyBox" class="headerlink" title="第九步QEMU启动内核加BusyBox"></a>第九步QEMU启动内核加BusyBox</h3><p>运行下面的命令:</p>
+<blockquote>
+<p>qemu-system-arm -M vexpress-a9 -m 1024M -kernel zImage -dtb vexpress-v2p-ca9.dtb -append “root=/dev/mmcblk0 rw console=ttyAMA0 init=/sbin/init” -sd rootfs.ext3 -smp 4 -serial stdio</p>
+</blockquote>
+<p>启动成功,仔细看日志会发现:</p>
+<blockquote>
+<p>can’t run ‘/etc/init.d/rcS’: No such file or directory</p>
+<p>can’t open /dev/tty2: No such file or directory<br>can’t open /dev/tty4: No such file or directory</p>
+</blockquote>
+<p><img src= "/img/loading.gif" data-src="C:%5CUsers%5C%E6%9B%B9%E6%96%B0%E5%AE%87%5CDesktop%5C%E5%9B%9B%E4%B8%AA%E4%BC%81%E9%B9%85.PNG" alt="四个企鹅"></p>
+<p>从日志上看,加载文件系统已经成功了!但是启动/etc/init.d/rcS文件失败了,而且缺少/dev目录.所以我们需要稍微修改一下我们的文件系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mount rootfs.ext3 mnt</span><br><span class="line"><span class="built_in">cd</span> mnt</span><br><span class="line">sudo mkdir proc sys dev etc etc/init.d</span><br></pre></td></tr></table></figure>
+
+<p>然后建立一个名为etc/init.d/rcS文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">mount -t proc none /proc</span><br><span class="line">mount -t sysfs none /sys</span><br><span class="line">/sbin/mdev -s</span><br></pre></td></tr></table></figure>
+
+<p>给这个文件加上可执行权限,然后解除挂载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x etc/init.d/rcS</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">sudo umount mnt</span><br></pre></td></tr></table></figure>
+
+<p>再次启动文件系统</p>
+<p><img src= "/img/loading.gif" data-src="C:%5CUsers%5C%E6%9B%B9%E6%96%B0%E5%AE%87%5CDesktop%5C%E5%9B%9B%E4%B8%AA%E4%BC%81%E9%B9%852.PNG" alt="四个企鹅2"></p>
+<h6 id="成功-2"><a href="#成功-2" class="headerlink" title="成功"></a>成功</h6></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">caoxy114</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://caoxy114.github.io/2020/07/27/study-qemu/">http://caoxy114.github.io/2020/07/27/study-qemu/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/study-qumu-Linux-Ubuntu/">study, qumu, Linux, Ubuntu</a></div><div class="post_share"><div class="social-share" data-image="/img/icon.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/07/27/test-my-life/"><img class="next-cover" data-src="/" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">test_my_life</div></div></a></div></nav></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By caoxy114</div><div class="framework-info"><span>Driven </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="Increase Font Size"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="Decrease Font Size"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script></body></html>
