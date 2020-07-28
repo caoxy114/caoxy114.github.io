@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>I never know you come to my life. - Welcome to My Blog</title><meta name="description"><meta name="author" content="caoxy114"><meta name="copyright" content="caoxy114"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://caoxy114.github.io/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="I never know you come to my life."><meta property="og:url" content="http://caoxy114.github.io/"><meta property="og:site_name" content="I never know you come to my life."><meta property="og:description"><meta property="og:image" content="http://caoxy114.github.io/img/icon.jpg"><meta property="article:published_time" content="2020-07-28T10:28:21.165Z"><meta property="article:modified_time" content="2020-07-28T10:28:21.165Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>I never know you come to my life. - Welcome to My Blog</title><meta name="description"><meta name="author" content="caoxy114"><meta name="copyright" content="caoxy114"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://caoxy114.github.io/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="I never know you come to my life."><meta property="og:url" content="http://caoxy114.github.io/"><meta property="og:site_name" content="I never know you come to my life."><meta property="og:description"><meta property="og:image" content="http://caoxy114.github.io/img/icon.jpg"><meta property="article:published_time" content="2020-07-28T11:15:31.891Z"><meta property="article:modified_time" content="2020-07-28T11:15:31.891Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
   document.documentElement.setAttribute('data-theme', 'dark')
   if (document.querySelector('meta[name="theme-color"]') !== null) {
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
@@ -89,7 +89,7 @@ if (autoChangeMode === '1') {
   isHome: true,
   isHighlightShrink: false,
   isSidebar: false,
-  postUpdate: '2020-07-28 18:28:21'
+  postUpdate: '2020-07-28 19:15:31'
 }</script><noscript><style>
 #nav {
   opacity: 1
@@ -109,8 +109,19 @@ hexo p
 to be filled
 </div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/07/28/study-qemu3/" title="study qemu3">     <img class="post_bg" data-src="https://i.loli.net/2020/07/27/IM1szZF4GEmA52W.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="study qemu3"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/28/study-qemu3/" title="study qemu3">study qemu3</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-07-28 17:44:10"><i class="far fa-calendar-alt"></i>2020-07-28</time></div><div class="content">qemu搭建arm开发环境接上个文档
 .
-.
-第三步 编写qt程序编写hello</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/07/27/study-qemu2/" title="study qemu2">     <img class="post_bg" data-src="https://i.loli.net/2020/07/27/IM1szZF4GEmA52W.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="study qemu2"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/27/study-qemu2/" title="study qemu2">study qemu2</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-07-27 16:19:35"><i class="far fa-calendar-alt"></i>2020-07-27</time></div><div class="content">qemu搭建arm开发环境2准备先对之前的步骤部分又执行了一遍
+一开始就出现巨大问题，浪费了四五个小时，问题是路径找不到，可能是环境变量的设置问题
+折腾了很长时间，问了两位同学，最后瞎整弄成功了，可以qmake 和 make了
+
+第三步 编写qt程序编写hello建立文件夹及文件123456mkdir srccd srcmkdir hellocd hellotouch hello1.cppsudo gedit hello1.cpp
+
+再将代码复制到cpp中1234567#include &lt;QApplication&gt;#include &lt;QDebug&gt;int main(int argc,char *argv[])&#123;    qDebug(&quot;Hello, welcome to Qt world!&quot;);    return 0;&#125;
+
+
+完成编译文件输入qmake .make等等123qmake -project hello1.cppqmake hello.promake
+
+
+建立ui文件并编译建立main.cpp内容为
+12345678910111213 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/07/27/study-qemu2/" title="study qemu2">     <img class="post_bg" data-src="https://i.loli.net/2020/07/27/IM1szZF4GEmA52W.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="study qemu2"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/27/study-qemu2/" title="study qemu2">study qemu2</a><div class="article-meta-wrap"><time class="post-meta__date" title="Created 2020-07-27 16:19:35"><i class="far fa-calendar-alt"></i>2020-07-27</time></div><div class="content">qemu搭建arm开发环境2准备先对之前的步骤部分又执行了一遍
 1&quot;C:\Program Files\qemu\qemu-system-arm.exe&quot; -M versatilepb -m 16 -kernel vmlinuz-qemu-arm-2.6.20 -append &quot;clocksource&#x3D;pit quiet rw&quot;
 
 
