@@ -1565,6 +1565,8 @@ pre .javascript .function {
   background: #212121;
   color: #eff;
   line-height: 20px;
+  counter-reset: line;
+  white-space: pre-wrap;
 }
 blockquote {
   margin: 0 0 1rem;
@@ -1615,6 +1617,15 @@ blockquote footer cite:before {
   margin: 0;
   padding: 8px 0;
   border: none;
+}
+#article-container figure.highlight .line:before {
+  display: inline-block;
+  padding: 0 0.3rem 0 0;
+  min-width: 1.6rem;
+  color: rgba(238,255,255,0.5);
+  content: counter(line);
+  counter-increment: line;
+  text-align: left;
 }
 #article-container figure.highlight .line.marked {
   background-color: rgba(97,97,97,0.314);
@@ -5045,6 +5056,23 @@ blockquote.pullquote.right {
 [data-theme='dark'] .mermaid {
   filter: brightness(0.7);
 }
+[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-tab-active,
+[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-no-comment {
+  color: rgba(255,255,255,0.6);
+}
+[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-order-label {
+  background-color: #1f1f1f;
+}
+[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-post-body {
+  color: rgba(255,255,255,0.6);
+}
+[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-post-body code,
+[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-post-body pre {
+  background: #2c2c2c;
+}
+[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-post-body blockquote {
+  color: rgba(255,255,255,0.6);
+}
 [data-theme='light'] .read-mode {
   background: #fff;
 }
@@ -5226,14 +5254,6 @@ blockquote.pullquote.right {
 }
 .read-mode #web_bg {
   background: none;
-}
-.read-mode #chatra,
-.read-mode #tidio-chat-code,
-.read-mode #tidio-chat,
-.read-mode #daodream-container,
-.read-mode .gitter-chat-embed,
-.read-mode .gitter-open-chat-button {
-  display: none !important;
 }
 .read-mode #article-container h1,
 .read-mode #article-container h2,
