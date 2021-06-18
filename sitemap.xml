@@ -51,21 +51,7 @@
   </url>
   
   <url>
-    <loc>https://cxygo.gitee.io/2020/07/30/img-2/</loc>
-    
-    <lastmod>2020-07-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/2020/07/29/Tips/</loc>
-    
-    <lastmod>2020-07-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/2020/07/29/git%E5%B8%B8%E7%94%A8/</loc>
+    <loc>https://cxygo.gitee.io/2020/07/29/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99%E4%BB%A3%E7%A0%81/</loc>
     
     <lastmod>2020-07-29</lastmod>
     
@@ -96,27 +82,6 @@
     <loc>https://cxygo.gitee.io/tags/index.html</loc>
     
     <lastmod>2020-07-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/2020/07/28/Hexo-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2020-07-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/2020/07/28/study-qemu3/</loc>
-    
-    <lastmod>2020-07-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/2020/07/27/study-qemu2/</loc>
-    
-    <lastmod>2020-07-27</lastmod>
     
   </url>
   
@@ -158,48 +123,6 @@
   </url>
   
   <url>
-    <loc>https://cxygo.gitee.io/tags/tips/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/tags/study/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/tags/%E7%BD%91%E7%AB%99/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/tags/Website/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/tags/Hexo/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/tags/git/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://cxygo.gitee.io/tags/%E6%94%B6%E8%97%8F/</loc>
     <lastmod>2021-06-18</lastmod>
     <changefreq>daily</changefreq>
@@ -214,13 +137,6 @@
   </url>
   
   <url>
-    <loc>https://cxygo.gitee.io/tags/%E4%B8%89%E6%AC%A1%E5%85%83/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://cxygo.gitee.io/tags/%E6%88%91%E7%9A%84%E6%8B%8D%E6%91%84/</loc>
     <lastmod>2021-06-18</lastmod>
     <changefreq>daily</changefreq>
@@ -228,7 +144,14 @@
   </url>
   
   <url>
-    <loc>https://cxygo.gitee.io/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/</loc>
+    <loc>https://cxygo.gitee.io/tags/%E6%97%85%E8%A1%8C/</loc>
+    <lastmod>2021-06-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://cxygo.gitee.io/tags/study/</loc>
     <lastmod>2021-06-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -263,14 +186,35 @@
   </url>
   
   <url>
-    <loc>https://cxygo.gitee.io/tags/%E6%97%A5%E8%AE%B0/</loc>
+    <loc>https://cxygo.gitee.io/tags/%E7%BD%91%E7%AB%99/</loc>
     <lastmod>2021-06-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://cxygo.gitee.io/tags/%E6%97%85%E8%A1%8C/</loc>
+    <loc>https://cxygo.gitee.io/tags/Website/</loc>
+    <lastmod>2021-06-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://cxygo.gitee.io/tags/git/</loc>
+    <lastmod>2021-06-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://cxygo.gitee.io/tags/hexo/</loc>
+    <lastmod>2021-06-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://cxygo.gitee.io/tags/%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2021-06-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -286,7 +230,7 @@
   </url>
   
   <url>
-    <loc>https://cxygo.gitee.io/categories/study/</loc>
+    <loc>https://cxygo.gitee.io/categories/life/%E6%97%85%E8%A1%8C/</loc>
     <lastmod>2021-06-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -300,6 +244,13 @@
   </url>
   
   <url>
+    <loc>https://cxygo.gitee.io/categories/study/</loc>
+    <lastmod>2021-06-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://cxygo.gitee.io/categories/life/%E6%94%B6%E8%97%8F/</loc>
     <lastmod>2021-06-18</lastmod>
     <changefreq>daily</changefreq>
@@ -307,28 +258,7 @@
   </url>
   
   <url>
-    <loc>https://cxygo.gitee.io/categories/life/tips/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://cxygo.gitee.io/categories/study/Linux/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/categories/study/Website/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/categories/study/git/</loc>
     <lastmod>2021-06-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -349,7 +279,7 @@
   </url>
   
   <url>
-    <loc>https://cxygo.gitee.io/categories/study/%E8%80%83%E7%A0%94/%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/</loc>
+    <loc>https://cxygo.gitee.io/categories/study/Website/</loc>
     <lastmod>2021-06-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -363,21 +293,7 @@
   </url>
   
   <url>
-    <loc>https://cxygo.gitee.io/categories/life/%E6%94%B6%E8%97%8F/%E5%9B%BE%E7%89%87/%E4%BA%8C%E6%AC%A1%E5%85%83/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/categories/life/%E6%94%B6%E8%97%8F/%E5%9B%BE%E7%89%87/%E4%B8%89%E6%AC%A1%E5%85%83/</loc>
-    <lastmod>2021-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://cxygo.gitee.io/categories/life/%E6%97%85%E8%A1%8C/</loc>
+    <loc>https://cxygo.gitee.io/categories/study/%E8%80%83%E7%A0%94/%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/</loc>
     <lastmod>2021-06-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
